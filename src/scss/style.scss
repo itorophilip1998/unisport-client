@@ -105,11 +105,20 @@ p>label{
  font-weight: normal !important;
 }
 .loading{
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.8);
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
-	position: absolute;
+	position: fixed;
 	z-index: 155 !important;
+	height: 100vh;
+	width: 100%;
+	text-align: center;
+	padding-top: 40vh ;
+}
+
+.loadinImg{ 
+	color: #01bafd;
+
 }

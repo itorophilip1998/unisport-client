@@ -14,27 +14,36 @@ export default function Register() {
     game_master_email: "",
     game_master_phone: "",
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(0);
 
   const submitGames = (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoading(1);
     axios
-      .post("http://localhost:8000/api/register", Data)
+      .post("https://unisport-api.herokuapp.com/api/register", Data)
       .then((result) => {
         setLoading(false);
-        toast("Registered Succesfully!");
-        console.log(result);
+        toast(`Registered as ${result.data.result.school_name} 👍`);
       })
       .catch((err) => {
-        setLoading(false); 
-        console.log(err);
+        setLoading(false);
       });
   };
+  const loadingFunc = () => { 
+    if (loading) { 
+      return (
+        <div className="loading ">
+          <div class="loadinImg text-info "> 
+            <i class="fas fa-spinner fa-pulse fa-5x "></i>  
+          </div>
+        </div>
+      ); 
+    } 
+  }
 
   return (
     <div>
-      <div className="loading"></div>
+      {loadingFunc()}
       <section id="mu-page-breadcrumb">
         <div className="container">
           <div className="row">
@@ -54,7 +63,6 @@ export default function Register() {
         </div>
       </section>
       {/* <!-- End breadcrumb --> */}
-
       {/* <!-- Start contact  --> */}
       <section id="mu-contact">
         <div className="container">
@@ -82,12 +90,13 @@ export default function Register() {
                               }
                             />
                           </p>
+
                           <p className="comment-form-author">
                             <label htmlFor="state">State</label>
                             <select
                               name="state"
                               id=""
-                              className="form-control"
+                              className="form-control "
                               onChange={(e) =>
                                 setData({ ...Data, state: e.target.value })
                               }

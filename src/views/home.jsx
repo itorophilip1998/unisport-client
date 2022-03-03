@@ -1,6 +1,6 @@
 import React from "react";
-import { Header } from "../layouts/Header";
-import { Route, Link } from "react-router-dom";
+// import { Header } from "../layouts/Header";
+import {  Link } from "react-router-dom";
 
 export default function home() {
   return (
