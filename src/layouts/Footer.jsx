@@ -1,4 +1,5 @@
 import React from 'react';
+    /* eslint-disable */
 
 export default function Footer() {
   return (
@@ -89,10 +90,7 @@ export default function Footer() {
         <div className="mu-footer-bottom">
           <div className="container">
             <div className="mu-footer-bottom-area">
-              <p>
-                &copy; All Right Reserved. Designed by{"Itoro Philip"}
-                 
-              </p>
+              <p>&copy; All Right Reserved. Designed by{"Itoro Philip"}</p>
             </div>
           </div>
         </div>

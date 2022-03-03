@@ -4,6 +4,7 @@ import state from "../state.json";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+    /* eslint-disable */
 
 export default function Register() {
   const [Data, setData] = useState({
